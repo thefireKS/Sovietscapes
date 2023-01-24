@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a69e8ed94cf7bf4da05d12b99fd1f8a, type: 3}
   m_Name: "\u0421ross"
   m_EditorClassIdentifier: 
-  icon: {fileID: 570833692, guid: 7728c2d9820c0484588f6d9aabc3a94f, type: 3}
+  icon: {fileID: 21300000, guid: 3308ff1ab713eef48beeb38bc31f6829, type: 3}
   value: 15
