@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &171049510
 RectTransform:
   m_ObjectHideFlags: 0
@@ -470,8 +470,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.6234, y: 31}
-  m_SizeDelta: {x: 808.6639, y: 828.5339}
+  m_AnchoredPosition: {x: 94.9341, y: -5.2602}
+  m_SizeDelta: {x: 967.8056, y: 1034.0083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1004881502
 PrefabInstance:
@@ -1135,10 +1135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 35
-    m_Right: 40
-    m_Top: 35
-    m_Bottom: 40
+    m_Left: 37
+    m_Right: 50
+    m_Top: 43
+    m_Bottom: 50
   m_ChildAlignment: 1
   m_Spacing: 20
   m_ChildForceExpandWidth: 1
