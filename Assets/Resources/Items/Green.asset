@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a69e8ed94cf7bf4da05d12b99fd1f8a, type: 3}
-  m_Name: Circle
+  m_Name: Green
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 8d4d22f7dcbca1c4ba1128c9b709986d, type: 3}
-  value: 1
+  icon: {fileID: 21300000, guid: 9e8dff89d1621424097cbf9911c556c8, type: 3}
+  value: 10
