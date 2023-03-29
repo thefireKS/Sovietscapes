@@ -11,6 +11,8 @@ public sealed class Board : MonoBehaviour
 {
     [SerializeField] private GameObject particleEffect;
     [SerializeField] private Transform parent;
+
+    [SerializeField] private Goal[] goals;
     
     [SerializeField] private int maxSteps;
     [SerializeField] private TextMeshProUGUI stepsText;
@@ -148,6 +150,13 @@ public sealed class Board : MonoBehaviour
                 {
                     deflateSequance.Join(connectedTile.icon.transform.DOScale(Vector3.zero, TweenDuration));
                     Instantiate(particleEffect, connectedTile.icon.transform.position, Quaternion.identity, parent);
+                    foreach (var goal in goals)
+                    {
+                        if (goal.objectToCollect.name == connectedTile.icon.sprite.name)
+                        {
+                            goal.Decrease();
+                        }
+                    }
                 }
                 
                 audioSource.PlayOneShot(collectSound);
