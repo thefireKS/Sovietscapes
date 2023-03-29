@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public sealed class Board : MonoBehaviour
 {
+    [SerializeField] private int maxSteps;
+    [SerializeField] private TextMeshProUGUI stepsText;
     public static Board Instance { get; private set; }
 
     [SerializeField] private AudioClip collectSound;
@@ -28,6 +31,8 @@ public sealed class Board : MonoBehaviour
 
     private void Start()
     {
+        stepsText.text = maxSteps.ToString();
+        
         Tiles = new Tile[rows.Max(row => row.tiles.Length), rows.Length];
 
         for (var y = 0; y < Height; y++)
@@ -50,6 +55,8 @@ public sealed class Board : MonoBehaviour
 
     public async void Select(Tile tile)
     {
+        if (maxSteps == 0) return;
+        
         if (!_selection.Contains(tile))
         {
             if (_selection.Count > 0)
@@ -64,8 +71,6 @@ public sealed class Board : MonoBehaviour
                 _selection.Add(tile);
             }
         }
-        
-        
         
         if (_selection.Count < 2) return;
         
@@ -82,6 +87,9 @@ public sealed class Board : MonoBehaviour
             await Swap(_selection[0],_selection[1]);
         }
         
+        maxSteps--;
+        stepsText.text = maxSteps.ToString();
+
         _selection.Clear();
     }
 
