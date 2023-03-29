@@ -1483,7 +1483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 7282877659617644948, guid: 86b2b1bb243a9134c95255e5f568cf45, type: 3}
   parent: {fileID: 2044183116}
-  goals: []
+  goals:
+  - {fileID: 161337441}
   maxSteps: 10
   stepsText: {fileID: 81445277}
   collectSound: {fileID: 8300000, guid: 7c5bae6420b7bbf408eda994348ebda4, type: 3}
