@@ -9,6 +9,9 @@ using Random = UnityEngine.Random;
 
 public sealed class Board : MonoBehaviour
 {
+    [SerializeField] private GameObject particleEffect;
+    [SerializeField] private Transform parent;
+    
     [SerializeField] private int maxSteps;
     [SerializeField] private TextMeshProUGUI stepsText;
     public static Board Instance { get; private set; }
@@ -81,14 +84,13 @@ public sealed class Board : MonoBehaviour
         if (CanPop())
         {
             Pop();
+            maxSteps--;
+            stepsText.text = maxSteps.ToString();
         }
         else
         {
             await Swap(_selection[0],_selection[1]);
         }
-        
-        maxSteps--;
-        stepsText.text = maxSteps.ToString();
 
         _selection.Clear();
     }
@@ -142,7 +144,11 @@ public sealed class Board : MonoBehaviour
 
                 var deflateSequance = DOTween.Sequence();
 
-                foreach (var connectedTile in connectedTiles) deflateSequance.Join(connectedTile.icon.transform.DOScale(Vector3.zero, TweenDuration));
+                foreach (var connectedTile in connectedTiles)
+                {
+                    deflateSequance.Join(connectedTile.icon.transform.DOScale(Vector3.zero, TweenDuration));
+                    Instantiate(particleEffect, connectedTile.icon.transform.position, Quaternion.identity, parent);
+                }
                 
                 audioSource.PlayOneShot(collectSound);
                 
@@ -162,6 +168,8 @@ public sealed class Board : MonoBehaviour
 
                 await inflateSequance.Play()
                                         .AsyncWaitForCompletion();
+                
+                
 
                 x = 0;
                 y = 0;

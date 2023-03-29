@@ -1387,6 +1387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b61a0de0dbd4b4786ab083eb08b593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 7282877659617644948, guid: 86b2b1bb243a9134c95255e5f568cf45, type: 3}
+  parent: {fileID: 2044183116}
   maxSteps: 10
   stepsText: {fileID: 81445277}
   collectSound: {fileID: 8300000, guid: 7c5bae6420b7bbf408eda994348ebda4, type: 3}
